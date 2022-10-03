@@ -1,0 +1,61 @@
+ $JDAcceptance = Yii::app()->db->createCommand('SELECT * FROM job_description_self_acceptance WHERE ref_emp_id = "' . $curent_user . '" AND ref_job_description_id = "' . $JobDescription->job_des_id . '" AND datetime = (SELECT MAX(datetime) FROM job_description_self_acceptance )')->queryAll();
+
+ $leaveMultiSuperiors = Yii::app()->db->createCommand()->setFetchMode(PDO::FETCH_OBJ)
+ ->select('hlms.lvmulti_sup_id,he.emp_no, he.emp_name, hlms.lvmulti_sup_approver ,(SELECT he.emp_status FROM hr_empbasic he WHERE he.emp_id = hlms.lvmulti_sup_approver) AS isactive')
+ ->from('hr_leave_multi_superiors hlms')
+ ->leftJoin('hr_empbasic he', 'he.emp_id = hlms.ref_emp_id')
+ ->where(' hlms.ref_emp_id="' . $id . '" AND hlms.lvmulti_sup_level = 1 AND he.emp_status = "active"')
+ ->having(' isactive = "active"')
+ ->queryAll();
+
+ ->selectDistinct()
+
+ $sql = Yii::app()->db->createCommand()->select('t.emp_id, t.emp_name, t.epf_no, emp.is_general_shift_emp')->from('hr_empbasic t')->getText();
+
+ $sql = 'SELECT confirm_ref_emp_id FROM confirm_basic_information
+ UNION
+ SELECT confirm_ref_emp_id FROM confirm_employement_information
+ UNION
+ SELECT confirm_ref_emp_id FROM confirm_demographic_data
+ UNION
+ SELECT confirm_ref_emp_id FROM confirm_contact_data
+ ORDER BY confirm_ref_emp_id; ';
+ $command = Yii::app()->db->createCommand($sql);
+ $result = $command->queryAll();
+
+
+ $res = User::model()->updateAll(array('user_organization_email' => Yii::app()->request->getPost('Empcontact')['emp_email']), 'ref_emp_id = ' . Yii::app()->request->getPost('emp_id') . '');
+
+
+ User::model()->findByPk(Yii::app()->user->id)->ref_emp_id;
+
+ Yii::app()->end();
+
+ Yii::app()->request->getPost('page'),
+
+
+ public function actionViewBasicData($id = null) {
+ Permission::checkAccess('V', true);
+ $model = new Empbasic();
+ $key = Controller::decodePostAction($id);
+ $id = $key[2];
+ if (isset($id)) {
+ $model = $model->findByPk($id);
+ }
+ $this->render('basicData', array('model' => $model, 'emp_id' => $id));
+ }
+
+
+
+ $model = new Dailyattendance;
+ $criteria=new CDbCriteria;
+
+
+
+
+ $criteria->select = 'date, punch_in,date_out,punch_out ';
+ $criteria->condition = "ref_emp_id=:empid AND is_approved_attendance=:is_approved_attendance AND day BETWEEN :startdate AND :enddate";
+ $criteria->params = array(':empid' => $empid, ':startdate' => $start_date, ':enddate' => $end_date, ':is_approved_attendance' => 1);
+ $criteria->condition = "position_id != 10";
+ $criteria->order = "position_name ASC";
+ $Array = $model->findAll($criteria);
