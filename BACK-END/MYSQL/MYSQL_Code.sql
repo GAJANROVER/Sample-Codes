@@ -7,7 +7,6 @@ SELECT VERSION();
 
 SELECT * FROM  hr_allattendance  WHERE DATE(checktime) =  '2022-01-28';  
 
-USE mint_cdb;
 
 DELIMITER $$
 DROP PROCEDURE IF EXISTS mint_demo_sl.SP_ATT_DAILY_PRE_INSERT$$
@@ -16,9 +15,8 @@ DROP PROCEDURE IF EXISTS mint_demo_sl.SP_ATT_NOPAY_OT_PROCESS_FOR_DATE_PERIOD$$
 DROP PROCEDURE IF EXISTS mint_demo_sl.SP_ATT_SPLIT_FLEXI_ADJEST$$
 DROP PROCEDURE IF EXISTS mint_demo_sl.SP_BEN_APPROVAL_SIYAPATHA$$
 
+
 DELIMITER ;
-
-
 SHOW PROCEDURE STATUS WHERE db = 'mint_cdb';
 
 // create table as another table mysql
