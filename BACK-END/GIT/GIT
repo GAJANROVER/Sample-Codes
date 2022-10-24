@@ -7,7 +7,7 @@ git push origin HEAD --force
 
 //Remove untracked files
 git clean -f
-clean -f -d
+git clean -f -d   /To remove directories
 
 To remove directories, run git clean -f -d or git clean -fd
 To remove ignored files, run git clean -f -X or git clean -fX
@@ -31,3 +31,19 @@ git config --global alias.ac "commit -am"
 // to check git config
 git config --global --list
 git config --list
+
+
+lists the most recently worked on branches from top to bottom.
+             -------- git for-each-ref --sort=-committerdate refs/heads/
+
+If you want to see the date of last commit, you can do this:
+             --------git for-each-ref --sort='-committerdate' --format='%(refname)%09%(committerdate)' refs/heads | sed -e 's-refs/heads/--'
+
+git last commit date with id
+------------------------------------------
+git rev-list --format=format:'%ai' --max-count=1 `git rev-parse HEAD`
+
+
+git last update date
+--------------------------------------------------------------
+git show -1 --stat
