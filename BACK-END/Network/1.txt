@@ -1,0 +1,4 @@
+The “tracert” command lets you see what locations your data is going through.
+tracert 20.239.70.10
+
+
