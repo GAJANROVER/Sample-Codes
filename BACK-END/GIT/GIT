@@ -1,0 +1,33 @@
+git push origin <your_branch_name> -f
+git push origin <your_branch_name> --force
+git merge --abort  
+
+git reset --hard <sha1-commit-id>
+git push origin HEAD --force
+
+//Remove untracked files
+git clean -f
+clean -f -d
+
+To remove directories, run git clean -f -d or git clean -fd
+To remove ignored files, run git clean -f -X or git clean -fX
+To remove ignored and non-ignored files, run git clean -f -x or git clean -fx
+
+// delete branch locally
+git branch -d localBranchName
+
+//delete local branch that is unmerged
+git branch -D localBranchName
+
+// delete branch remotely
+git push origin --delete remoteBranchName
+
+// to change previous branch
+git checkout - 
+
+// configure git shortcut
+git config --global alias.ac "commit -am"
+
+// to check git config
+git config --global --list
+git config --list
