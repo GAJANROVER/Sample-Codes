@@ -1,0 +1,29 @@
+p {
+   color: brown;
+   text-align: center;
+   font-size: 300px;
+}
+
+/* CSS Id Selector */
+#p1 {
+   text-align: right;
+}
+
+/* CSS Class Selector */
+.p2 {
+   text-align: left;
+}
+
+/* CSS Universal Selector */
+* {
+   background-color: black;
+}
+
+h1,
+p {
+   font-size: 50px;
+}
+
+body {
+   background-color: aqua;
+}
