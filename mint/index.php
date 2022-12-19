@@ -110,3 +110,6 @@ addCvContent();
 
     }
 </script>
+
+
+echo Common::jsonError(Common::get("unabletosave"));

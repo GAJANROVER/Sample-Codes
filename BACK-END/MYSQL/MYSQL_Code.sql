@@ -59,3 +59,6 @@ SELECT * FROM main_config;
 
 
   SELECT * FROM tax_rate_for_tier_tax trftt WHERE trftt.ref_tax_id = 1 AND 164446 BETWEEN min_amount AND max_amount
+
+
+  ALTER TABLE hr_empbasic MODIFY COLUMN last_working_date date DEFAULT NULL AFTER resg_given;  // change position without losing data.
