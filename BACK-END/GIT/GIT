@@ -1,8 +1,17 @@
+git checkout -b <branch_name> // create new branch
+git add .  // adding the changes to the branch 
+git commit -m "testing" // add comment for the changes
+git push origin  <branch_name>   // push the changes to remote repo
+git clone git@github.com:GAJANROVER/test.git  // clonning the remote repo
+git status   // to check the status of the branch 
+git pull origin <branch_name>   updating the local repo
+git checkout -b <branch_name>  // creating new branch
+
 git push origin <your_branch_name> -f
 git push origin <your_branch_name> --force
-git merge --abort  
+git merge --abort  // abort the merge
 
-git reset --hard <sha1-commit-id>
+git reset --hard <sha1-commit-id> 
 git push origin HEAD --force
 
 //Remove untracked files

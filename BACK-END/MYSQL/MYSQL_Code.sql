@@ -30,6 +30,16 @@ show triggers;
 SHOW EVENTS;
 
 
+-- show views
+SHOW FULL TABLES IN mint_brescia WHERE TABLE_TYPE LIKE 'VIEW';
+
+SHOW FULL TABLES 
+WHERE table_type = 'VIEW';
+
+SHOW FULL TABLES 
+LIKE 'VW_MINT_RPT_HIE_ALL';
+
+
 
 	desc hr_pm_superiors;
 	 SHOW FULL COLUMNS  FROM hr_empbasic;
