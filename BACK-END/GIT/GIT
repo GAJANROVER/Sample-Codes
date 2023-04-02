@@ -34,7 +34,7 @@ git push origin --delete remoteBranchName
 // to change previous branch
 git checkout - 
 
-// configure git shortcutb
+// configure git shortcut
 git config --global alias.ac "commit -am"
 
 // to check git config
