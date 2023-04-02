@@ -11,7 +11,7 @@ git push origin <your_branch_name> -f
 git push origin <your_branch_name> --force
 git merge --abort  // abort the merge
 
-git reset --hard <sha1-commit-id> 
+git reset --hard <sha1-commit-id>  // back to old commit
 git push origin HEAD --force
 
 //Remove untracked files
@@ -34,7 +34,7 @@ git push origin --delete remoteBranchName
 // to change previous branch
 git checkout - 
 
-// configure git shortcut
+// configure git shortcutb
 git config --global alias.ac "commit -am"
 
 // to check git config

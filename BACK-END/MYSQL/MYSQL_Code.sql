@@ -69,3 +69,16 @@ SELECT * FROM main_config;
 
 
   SELECT * FROM tax_rate_for_tier_tax trftt WHERE trftt.ref_tax_id = 1 AND 164446 BETWEEN min_amount AND max_amount
+
+ -- update date only in datetime format 
+  UPDATE hr_allattendance SET checktime = concat('2023-02-27 ', time(checktime)) ;
+
+
+ -- update date only in datetime format 
+UPDATE hr_allattendance SET checktime = concat(date(checktime), ' 21:00:00');
+
+-- create index for table
+CREATE INDEX IDX_prl_lateandearly on prl_lateandearly (ref_emp_id,le_date);
+
+-- check index in table 
+ SHOW INDEX FROM prl_lateandearly;
