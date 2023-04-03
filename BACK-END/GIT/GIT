@@ -56,3 +56,9 @@ git rev-list --format=format:'%ai' --max-count=1 `git rev-parse HEAD`
 git last update date
 --------------------------------------------------------------
 git show -1 --stat
+
+//stash with untracked files
+git stash -u
+
+// check stash list
+git stash --list
