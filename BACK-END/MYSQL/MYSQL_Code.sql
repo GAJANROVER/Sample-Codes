@@ -80,3 +80,5 @@ CREATE INDEX IDX_prl_lateandearly on prl_lateandearly (ref_emp_id,le_date);
 
 -- check index in table 
  SHOW INDEX FROM prl_lateandearly;
+
+ ALTER TABLE hr_empbasic MODIFY COLUMN last_working_date date DEFAULT NULL AFTER resg_given;  // change position without losing data.
