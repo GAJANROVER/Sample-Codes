@@ -50,7 +50,7 @@ If you want to see the date of last commit, you can do this:
 
 git last commit date with id
 ------------------------------------------
-git rev-list --format=format:'%ai' --max-count=1 `git rev-parse HEAD`
+git rev-list --format=format:'%ai' --max-count=1 `git rev-parse HEAD`b
 
 
 git last update date
