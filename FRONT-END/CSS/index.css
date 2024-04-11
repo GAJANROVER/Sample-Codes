@@ -1,0 +1,6 @@
+   h2 {
+            color: aqua;
+            border: 2px solid powderblue;
+            padding: 30px; // The CSS padding property defines a padding (space) between the text and the border.
+            margin: 50px; // The CSS margin property defines a margin (space) outside the border.
+        }

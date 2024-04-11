@@ -1,7 +1,7 @@
 <?php  
 
 // laravel codes
-// laravel new my_first_app   - creating new app with name
+// composer create-project laravel/laravel:^10.0 example-app   creating new app with name
 // php artisan serve   - run the server 
 // php artisan --version   - check laravel version 
 // php artisan migrate   -  database migration
