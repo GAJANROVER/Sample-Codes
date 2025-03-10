@@ -13,3 +13,14 @@ if ($e = curl_error($ch)) {
     print_r($decoded);
 }
 curl_close($ch);
+
+
+
+
+function test(){
+    $data = ['1' => 'gajna', '2' => 'software engineer', '3' => 'web developer'];
+    foreach($data as $values){
+        echo $values;
+    }
+
+}
